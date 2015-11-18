@@ -32,11 +32,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.courseEntryButton = new System.Windows.Forms.Button();
             this.teacherButton = new System.Windows.Forms.Button();
+            this.courseAssignButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // enterDepartmentButton
             // 
-            this.enterDepartmentButton.Location = new System.Drawing.Point(56, 48);
+            this.enterDepartmentButton.Location = new System.Drawing.Point(34, 48);
             this.enterDepartmentButton.Name = "enterDepartmentButton";
             this.enterDepartmentButton.Size = new System.Drawing.Size(129, 23);
             this.enterDepartmentButton.TabIndex = 0;
@@ -56,9 +57,9 @@
             // 
             // courseEntryButton
             // 
-            this.courseEntryButton.Location = new System.Drawing.Point(56, 110);
+            this.courseEntryButton.Location = new System.Drawing.Point(12, 110);
             this.courseEntryButton.Name = "courseEntryButton";
-            this.courseEntryButton.Size = new System.Drawing.Size(75, 23);
+            this.courseEntryButton.Size = new System.Drawing.Size(100, 23);
             this.courseEntryButton.TabIndex = 2;
             this.courseEntryButton.Text = "Course Entry";
             this.courseEntryButton.UseVisualStyleBackColor = true;
@@ -66,7 +67,7 @@
             // 
             // teacherButton
             // 
-            this.teacherButton.Location = new System.Drawing.Point(179, 110);
+            this.teacherButton.Location = new System.Drawing.Point(334, 110);
             this.teacherButton.Name = "teacherButton";
             this.teacherButton.Size = new System.Drawing.Size(114, 23);
             this.teacherButton.TabIndex = 3;
@@ -74,11 +75,21 @@
             this.teacherButton.UseVisualStyleBackColor = true;
             this.teacherButton.Click += new System.EventHandler(this.teacherButton_Click);
             // 
+            // courseAssignButton
+            // 
+            this.courseAssignButton.Location = new System.Drawing.Point(148, 110);
+            this.courseAssignButton.Name = "courseAssignButton";
+            this.courseAssignButton.Size = new System.Drawing.Size(119, 23);
+            this.courseAssignButton.TabIndex = 4;
+            this.courseAssignButton.Text = "Course Assign";
+            this.courseAssignButton.UseVisualStyleBackColor = true;
+            // 
             // MainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 261);
+            this.Controls.Add(this.courseAssignButton);
             this.Controls.Add(this.teacherButton);
             this.Controls.Add(this.courseEntryButton);
             this.Controls.Add(this.button1);
@@ -95,6 +106,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button courseEntryButton;
         private System.Windows.Forms.Button teacherButton;
+        private System.Windows.Forms.Button courseAssignButton;
     }
 }
 
