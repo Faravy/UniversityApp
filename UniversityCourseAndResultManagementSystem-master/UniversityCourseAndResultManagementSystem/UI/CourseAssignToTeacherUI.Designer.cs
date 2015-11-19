@@ -42,6 +42,7 @@
             this.creditTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.remainingCreditTextBox = new System.Windows.Forms.TextBox();
+            this.saveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -162,11 +163,22 @@
             this.remainingCreditTextBox.Size = new System.Drawing.Size(121, 20);
             this.remainingCreditTextBox.TabIndex = 13;
             // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(312, 301);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.TabIndex = 14;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
             // CourseAssignToTeacherUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 385);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.remainingCreditTextBox);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.creditTextBox);
@@ -205,5 +217,6 @@
         private System.Windows.Forms.TextBox creditTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox remainingCreditTextBox;
+        private System.Windows.Forms.Button saveButton;
     }
 }

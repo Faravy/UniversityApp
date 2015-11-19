@@ -14,6 +14,7 @@ namespace UniversityCourseAndResultManagementSystem.UI
 {
     public partial class CourseAssignToTeacherUI : Form
     {
+        private CourseAssignManager courseAssignManager = new CourseAssignManager();
         public CourseAssignToTeacherUI()
         {
             InitializeComponent();
@@ -104,10 +105,35 @@ namespace UniversityCourseAndResultManagementSystem.UI
             Teacher teacher=teacherComboBox.SelectedItem as Teacher;
             if (teacher != null)
             {
+                double assignedCredit = courseAssignManager.GetTeacherRemainingCreditByTeacherId(teacher.Id);
                 creditTakenTextBox.Text = teacher.Credit_Taken.ToString();
+                remainingCreditTextBox.Text = (teacher.Credit_Taken - assignedCredit).ToString();
             }
 
         }
-        
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CourseAssignToTeacher courseAssignToTeacher=new CourseAssignToTeacher();
+                courseAssignToTeacher.Teacher_id = (int) teacherComboBox.SelectedValue;
+                courseAssignToTeacher.Course_id = (int) courseComboBox.SelectedValue;
+                if (courseAssignManager.Save(courseAssignToTeacher))
+                {
+                    MessageBox.Show("Course Assigned to Teacher Successful");
+                }
+                else
+                {
+                    MessageBox.Show("Course Assigned to Teacher Failed");
+                }
+            }
+            catch (Exception exception)
+            {
+
+                MessageBox.Show(exception.Message);
+            }
+            
+        }
     }
 }

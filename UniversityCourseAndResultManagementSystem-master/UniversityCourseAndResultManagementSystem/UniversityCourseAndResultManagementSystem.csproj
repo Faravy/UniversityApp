@@ -59,6 +59,7 @@
     <Compile Include="DAL\DAO\Designation.cs" />
     <Compile Include="DAL\DAO\Semester.cs" />
     <Compile Include="DAL\DAO\Teacher.cs" />
+    <Compile Include="DAL\DAO\ViewModel\TeacherCreditViewModel.cs" />
     <Compile Include="DAL\Gateway\CourseAssignGateway.cs" />
     <Compile Include="DAL\Gateway\CourseGateway.cs" />
     <Compile Include="DAL\Gateway\DepartmentGateway.cs" />

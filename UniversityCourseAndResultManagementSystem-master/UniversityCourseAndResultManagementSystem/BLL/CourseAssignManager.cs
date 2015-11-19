@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UniversityCourseAndResultManagementSystem.DAL.DAO;
+using UniversityCourseAndResultManagementSystem.DAL.DAO.ViewModel;
 using UniversityCourseAndResultManagementSystem.DAL.Gateway;
 
 namespace UniversityCourseAndResultManagementSystem.BLL
@@ -25,6 +26,26 @@ namespace UniversityCourseAndResultManagementSystem.BLL
         public bool IsCourseAlreadyAssigned(int courseId)
         {
             return courseAssignGateway.IsCourseAlreadyAssigned(courseId) > 0;
+        }
+
+        private List<TeacherCreditViewModel> GetTeacherAssignedCreditInfo()
+        {
+            return courseAssignGateway.GetTeacherAssignedCreditInfo();
+        }
+
+        public double GetTeacherRemainingCreditByTeacherId(int teacherId)
+        {
+            double creditAssigned = 0;
+            List<TeacherCreditViewModel> creditViewModels = GetTeacherAssignedCreditInfo();
+            if (creditViewModels != null && creditViewModels.Any())
+            {
+                TeacherCreditViewModel creditViewModel = creditViewModels.FirstOrDefault(c => c.TeacherId == teacherId);
+                if (creditViewModel!=null)
+                {
+                    creditAssigned = creditViewModel.CreditAssigned;
+                }
+            }
+            return creditAssigned;
         }
 
     }
