@@ -67,6 +67,36 @@ namespace UniversityCourseAndResultManagementSystem.DAL.Gateway
             }
         }
 
-        
+        public List<Course> GetAllCourse()
+        {
+            List<Course> courseList = new List<Course>();
+            string query = "SELECT * FROM t_course";
+            aSqlCommand = new SqlCommand(query, aSqlConnection);
+            aSqlConnection.Open();
+            SqlDataReader aSqlDataReader = aSqlCommand.ExecuteReader();
+
+            while (aSqlDataReader.Read())
+            {
+                Course course = new Course();
+                course.Id = (int)aSqlDataReader["id"];
+                course.Name = aSqlDataReader["name"].ToString();
+                course.Code = aSqlDataReader["code"].ToString();
+                course.Credit =(decimal) aSqlDataReader["credit"];
+                course.Description = aSqlDataReader["description"].ToString();
+                course.Dept_id = (int)aSqlDataReader["dept_id"];
+                course.Semester_id = (int)aSqlDataReader["semester_id"];
+                
+
+
+                courseList.Add(course);
+            }
+            aSqlDataReader.Close();
+            aSqlConnection.Close();
+
+            return courseList;
+        }
+
+
+
     }
 }

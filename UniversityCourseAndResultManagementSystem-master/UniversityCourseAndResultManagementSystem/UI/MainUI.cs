@@ -41,5 +41,11 @@ namespace UniversityCourseAndResultManagementSystem
             TeacherEntryUI teacherEntryUi=new TeacherEntryUI();
             teacherEntryUi.Show();
         }
+
+        private void courseAssignButton_Click(object sender, EventArgs e)
+        {
+            CourseAssignToTeacherUI courseAssignToTeacherUi=new CourseAssignToTeacherUI();
+            courseAssignToTeacherUi.Show();
+        }
     }
 }

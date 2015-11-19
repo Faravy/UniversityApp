@@ -12,16 +12,20 @@ namespace UniversityCourseAndResultManagementSystem.BLL
     {
         CourseAssignGateway courseAssignGateway = new CourseAssignGateway();
 
-        public string Save(CourseAssignToTeacher courseAssign)
+        public bool Save(CourseAssignToTeacher courseAssign)
         {
-            CourseAssignToTeacher courseCheck = courseAssignGateway.FindCourse(courseAssign.Course_id);
-            if (courseCheck == null)
-            {
-                courseAssignGateway.Save(courseAssign);
-                return "Course Assigned";
-            }
-            return "Course Already Assigned";
 
+            if (IsCourseAlreadyAssigned(courseAssign.Course_id))
+            {
+                throw new Exception("Course Already Assigned");
+            }
+            return courseAssignGateway.Save(courseAssign)>0;
         }
+
+        public bool IsCourseAlreadyAssigned(int courseId)
+        {
+            return courseAssignGateway.IsCourseAlreadyAssigned(courseId) > 0;
+        }
+
     }
 }

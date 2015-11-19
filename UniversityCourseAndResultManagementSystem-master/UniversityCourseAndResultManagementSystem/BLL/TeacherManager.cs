@@ -23,5 +23,9 @@ namespace UniversityCourseAndResultManagementSystem.BLL
             return "Email Already Exists";
 
         }
+        public List<Teacher> GetAllTeachers()
+        {
+            return teacherGateway.GetAllTeacher();
+        }
     }
 }

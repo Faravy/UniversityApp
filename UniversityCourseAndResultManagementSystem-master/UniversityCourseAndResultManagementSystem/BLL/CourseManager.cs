@@ -1,4 +1,5 @@
-﻿using UniversityCourseAndResultManagementSystem.DAL.DAO;
+﻿using System.Collections.Generic;
+using UniversityCourseAndResultManagementSystem.DAL.DAO;
 using UniversityCourseAndResultManagementSystem.DAL.Gateway;
 
 namespace UniversityCourseAndResultManagementSystem.BLL
@@ -45,5 +46,10 @@ namespace UniversityCourseAndResultManagementSystem.BLL
                 return "Code length must be 5 characters long.";
             }
         }
+        public List<Course> GetAllCourse()
+        {
+            return aCourseGateway.GetAllCourse();
+        }
+
     }
 }

@@ -35,9 +35,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.deptComboBox = new System.Windows.Forms.ComboBox();
+            this.courseComboBox = new System.Windows.Forms.ComboBox();
+            this.teacherComboBox = new System.Windows.Forms.ComboBox();
+            this.creditTakenTextBox = new System.Windows.Forms.TextBox();
+            this.creditTextBox = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.remainingCreditTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -103,39 +107,73 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Teacher";
             // 
-            // comboBox1
+            // deptComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(266, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.deptComboBox.FormattingEnabled = true;
+            this.deptComboBox.Location = new System.Drawing.Point(266, 36);
+            this.deptComboBox.Name = "deptComboBox";
+            this.deptComboBox.Size = new System.Drawing.Size(121, 21);
+            this.deptComboBox.TabIndex = 7;
+            this.deptComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // comboBox2
+            // courseComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(266, 180);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 8;
+            this.courseComboBox.FormattingEnabled = true;
+            this.courseComboBox.Location = new System.Drawing.Point(266, 180);
+            this.courseComboBox.Name = "courseComboBox";
+            this.courseComboBox.Size = new System.Drawing.Size(121, 21);
+            this.courseComboBox.TabIndex = 8;
+            this.courseComboBox.SelectedIndexChanged += new System.EventHandler(this.courseComboBox_SelectedIndexChanged);
             // 
-            // comboBox3
+            // teacherComboBox
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(266, 73);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 9;
+            this.teacherComboBox.FormattingEnabled = true;
+            this.teacherComboBox.Location = new System.Drawing.Point(266, 73);
+            this.teacherComboBox.Name = "teacherComboBox";
+            this.teacherComboBox.Size = new System.Drawing.Size(121, 21);
+            this.teacherComboBox.TabIndex = 9;
+            this.teacherComboBox.SelectedIndexChanged += new System.EventHandler(this.teacherComboBox_SelectedIndexChanged);
+            // 
+            // creditTakenTextBox
+            // 
+            this.creditTakenTextBox.Location = new System.Drawing.Point(266, 106);
+            this.creditTakenTextBox.Name = "creditTakenTextBox";
+            this.creditTakenTextBox.Size = new System.Drawing.Size(121, 20);
+            this.creditTakenTextBox.TabIndex = 10;
+            // 
+            // creditTextBox
+            // 
+            this.creditTextBox.Location = new System.Drawing.Point(266, 259);
+            this.creditTextBox.Name = "creditTextBox";
+            this.creditTextBox.Size = new System.Drawing.Size(121, 20);
+            this.creditTextBox.TabIndex = 11;
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.Location = new System.Drawing.Point(266, 220);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(121, 20);
+            this.nameTextBox.TabIndex = 12;
+            // 
+            // remainingCreditTextBox
+            // 
+            this.remainingCreditTextBox.Location = new System.Drawing.Point(266, 142);
+            this.remainingCreditTextBox.Name = "remainingCreditTextBox";
+            this.remainingCreditTextBox.Size = new System.Drawing.Size(121, 20);
+            this.remainingCreditTextBox.TabIndex = 13;
             // 
             // CourseAssignToTeacherUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 385);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.remainingCreditTextBox);
+            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.creditTextBox);
+            this.Controls.Add(this.creditTakenTextBox);
+            this.Controls.Add(this.teacherComboBox);
+            this.Controls.Add(this.courseComboBox);
+            this.Controls.Add(this.deptComboBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -145,6 +183,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CourseAssignToTeacherUI";
             this.Text = "CourseAssignToTeacherUI";
+            this.Load += new System.EventHandler(this.CourseAssignToTeacherUI_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,8 +198,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox deptComboBox;
+        private System.Windows.Forms.ComboBox courseComboBox;
+        private System.Windows.Forms.ComboBox teacherComboBox;
+        private System.Windows.Forms.TextBox creditTakenTextBox;
+        private System.Windows.Forms.TextBox creditTextBox;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.TextBox remainingCreditTextBox;
     }
 }

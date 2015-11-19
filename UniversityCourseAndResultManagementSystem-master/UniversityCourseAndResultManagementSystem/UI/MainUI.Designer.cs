@@ -83,6 +83,7 @@
             this.courseAssignButton.TabIndex = 4;
             this.courseAssignButton.Text = "Course Assign";
             this.courseAssignButton.UseVisualStyleBackColor = true;
+            this.courseAssignButton.Click += new System.EventHandler(this.courseAssignButton_Click);
             // 
             // MainUI
             // 
