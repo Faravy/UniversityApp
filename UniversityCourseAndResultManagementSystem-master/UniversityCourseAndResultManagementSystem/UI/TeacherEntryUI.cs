@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UniversityCourseAndResultManagementSystem.BLL;
@@ -48,17 +49,29 @@ namespace UniversityCourseAndResultManagementSystem.UI
                 MessageBox.Show("insert credit value");
                 return;
             }
-            string name = nameTextBox.Text;
-            string address = addressTextBox.Text;
+            string pattern = null;
+            pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
             string email = emailTextBox.Text;
-            string contactNo = contactTextBox.Text;
-            double credit = Convert.ToDouble(creditTextBox.Text);
+
+            if (Regex.IsMatch(email, pattern))
+            {
+                string name = nameTextBox.Text;
+                string address = addressTextBox.Text;
+                
+                string contactNo = contactTextBox.Text;
+                double credit = Convert.ToDouble(creditTextBox.Text);
+
+                int deptId = (int)deptComboBox.SelectedValue;
+                int designationId = (int)designationComboBox.SelectedValue;
+                Teacher teacher = new Teacher(name, address, email, contactNo, designationId, deptId, credit);
+                string msg = teacherManager.Save(teacher);
+                MessageBox.Show(msg);
+            }
+            else
+            {
+                MessageBox.Show("Not a valid Email address ");
+            }
            
-            int deptId = (int)deptComboBox.SelectedValue;
-            int designationId = (int)designationComboBox.SelectedValue;
-            Teacher teacher = new Teacher(name,address,email,contactNo,designationId,deptId,credit);
-            string msg = teacherManager.Save(teacher);
-            MessageBox.Show(msg);
 
         }
 

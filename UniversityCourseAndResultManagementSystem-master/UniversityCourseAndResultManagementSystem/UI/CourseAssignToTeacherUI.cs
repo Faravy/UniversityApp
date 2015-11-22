@@ -41,8 +41,6 @@ namespace UniversityCourseAndResultManagementSystem.UI
                     courseComboBox.ValueMember = "Id";
                 }
             }
-
-
            
         }
 
@@ -99,7 +97,6 @@ namespace UniversityCourseAndResultManagementSystem.UI
         }
 
        
-
         private void teacherComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Teacher teacher=teacherComboBox.SelectedItem as Teacher;

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UniversityCourseAndResultManagementSystem.DAL.DAO;
+using UniversityCourseAndResultManagementSystem.DAL.DAO.ViewModel;
 using UniversityCourseAndResultManagementSystem.DAL.Gateway;
 
 namespace UniversityCourseAndResultManagementSystem.BLL
@@ -49,6 +50,10 @@ namespace UniversityCourseAndResultManagementSystem.BLL
         public List<Course> GetAllCourse()
         {
             return aCourseGateway.GetAllCourse();
+        }
+        public List<ViewCourseStatics> GetAssignCourses()
+        {
+            return aCourseGateway.GetAssignedCourse();
         }
 
     }

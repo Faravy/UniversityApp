@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
 using UniversityCourseAndResultManagementSystem.DAL.DAO;
+using UniversityCourseAndResultManagementSystem.DAL.DAO.ViewModel;
 
 namespace UniversityCourseAndResultManagementSystem.DAL.Gateway
 {
@@ -89,6 +90,32 @@ namespace UniversityCourseAndResultManagementSystem.DAL.Gateway
 
 
                 courseList.Add(course);
+            }
+            aSqlDataReader.Close();
+            aSqlConnection.Close();
+
+            return courseList;
+        }
+        public List<ViewCourseStatics> GetAssignedCourse()
+        {
+            List<ViewCourseStatics> courseList = new List<ViewCourseStatics>();
+            string query = "SELECT * FROM View_CourseStatics";
+            aSqlCommand = new SqlCommand(query, aSqlConnection);
+            aSqlConnection.Open();
+            SqlDataReader aSqlDataReader = aSqlCommand.ExecuteReader();
+
+            while (aSqlDataReader.Read())
+            {
+                ViewCourseStatics viewCourseStatics = new ViewCourseStatics();
+
+                viewCourseStatics.CourseId= (int)aSqlDataReader["CourseId"];
+                viewCourseStatics.CourseCode = aSqlDataReader["CourseCode"].ToString();
+                viewCourseStatics.CourseName = aSqlDataReader["CourseName"].ToString();
+                viewCourseStatics.SemesterName = aSqlDataReader["Semester"].ToString();
+                viewCourseStatics.TeacherName = aSqlDataReader["TeacherName"].ToString();
+                viewCourseStatics.DeptId = (int)aSqlDataReader["DeptId"];
+
+                courseList.Add(viewCourseStatics);
             }
             aSqlDataReader.Close();
             aSqlConnection.Close();

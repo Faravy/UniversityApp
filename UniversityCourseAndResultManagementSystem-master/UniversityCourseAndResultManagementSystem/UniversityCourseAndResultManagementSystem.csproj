@@ -60,6 +60,7 @@
     <Compile Include="DAL\DAO\Semester.cs" />
     <Compile Include="DAL\DAO\Teacher.cs" />
     <Compile Include="DAL\DAO\ViewModel\TeacherCreditViewModel.cs" />
+    <Compile Include="DAL\DAO\ViewModel\ViewCourseStatics.cs" />
     <Compile Include="DAL\Gateway\CourseAssignGateway.cs" />
     <Compile Include="DAL\Gateway\CourseGateway.cs" />
     <Compile Include="DAL\Gateway\DepartmentGateway.cs" />
@@ -99,6 +100,12 @@
     <Compile Include="UI\TeacherEntryUI.Designer.cs">
       <DependentUpon>TeacherEntryUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ViewCourseStaticsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ViewCourseStaticsUI.Designer.cs">
+      <DependentUpon>ViewCourseStaticsUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ViewDepartmentUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TeacherEntryUI.resx">
       <DependentUpon>TeacherEntryUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ViewCourseStaticsUI.resx">
+      <DependentUpon>ViewCourseStaticsUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ViewDepartmentUI.resx">
       <DependentUpon>ViewDepartmentUI.cs</DependentUpon>
