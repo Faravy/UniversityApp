@@ -34,6 +34,8 @@
             this.teacherButton = new System.Windows.Forms.Button();
             this.courseAssignButton = new System.Windows.Forms.Button();
             this.viewCourseButton = new System.Windows.Forms.Button();
+            this.registerStudentButton = new System.Windows.Forms.Button();
+            this.roomAllocatebutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // enterDepartmentButton
@@ -96,11 +98,33 @@
             this.viewCourseButton.UseVisualStyleBackColor = true;
             this.viewCourseButton.Click += new System.EventHandler(this.viewCourseButton_Click);
             // 
+            // registerStudentButton
+            // 
+            this.registerStudentButton.Location = new System.Drawing.Point(173, 176);
+            this.registerStudentButton.Name = "registerStudentButton";
+            this.registerStudentButton.Size = new System.Drawing.Size(110, 23);
+            this.registerStudentButton.TabIndex = 6;
+            this.registerStudentButton.Text = "Register Student";
+            this.registerStudentButton.UseVisualStyleBackColor = true;
+            this.registerStudentButton.Click += new System.EventHandler(this.registerStudentButton_Click);
+            // 
+            // roomAllocatebutton
+            // 
+            this.roomAllocatebutton.Location = new System.Drawing.Point(334, 176);
+            this.roomAllocatebutton.Name = "roomAllocatebutton";
+            this.roomAllocatebutton.Size = new System.Drawing.Size(110, 23);
+            this.roomAllocatebutton.TabIndex = 7;
+            this.roomAllocatebutton.Text = "Allocate Room";
+            this.roomAllocatebutton.UseVisualStyleBackColor = true;
+            this.roomAllocatebutton.Click += new System.EventHandler(this.roomAllocatebutton_Click);
+            // 
             // MainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 261);
+            this.Controls.Add(this.roomAllocatebutton);
+            this.Controls.Add(this.registerStudentButton);
             this.Controls.Add(this.viewCourseButton);
             this.Controls.Add(this.courseAssignButton);
             this.Controls.Add(this.teacherButton);
@@ -121,6 +145,8 @@
         private System.Windows.Forms.Button teacherButton;
         private System.Windows.Forms.Button courseAssignButton;
         private System.Windows.Forms.Button viewCourseButton;
+        private System.Windows.Forms.Button registerStudentButton;
+        private System.Windows.Forms.Button roomAllocatebutton;
     }
 }
 

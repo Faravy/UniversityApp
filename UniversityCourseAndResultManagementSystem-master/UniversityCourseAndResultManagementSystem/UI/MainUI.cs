@@ -53,5 +53,17 @@ namespace UniversityCourseAndResultManagementSystem
             ViewCourseStaticsUI viewCourseStaticsUi=new ViewCourseStaticsUI();
             viewCourseStaticsUi.Show();
         }
+
+        private void registerStudentButton_Click(object sender, EventArgs e)
+        {
+            StudentRegistrationUI studentRegistrationUi=new StudentRegistrationUI();
+            studentRegistrationUi.Show();
+        }
+
+        private void roomAllocatebutton_Click(object sender, EventArgs e)
+        {
+            RoomAllocationUI roomAllocationUi=new RoomAllocationUI();
+            roomAllocationUi.Show();
+        }
     }
 }
